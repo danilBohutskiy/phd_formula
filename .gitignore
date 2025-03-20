@@ -28,3 +28,5 @@ poetry.lock
 *.db
 
 *.csv
+*.txt
+text.txt
