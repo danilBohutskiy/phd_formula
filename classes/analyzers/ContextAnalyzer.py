@@ -11,6 +11,11 @@ class ContextAnalyzer:
         """Выполняет контекстный анализ и возвращает релевантные термины."""
         context_analysis = ContextualAnalysis(self.text)
         relevant_terms = context_analysis.get_relevant_terms(self.term, self.topn)
+        
+        # Проверка на None перед обработкой
+        if relevant_terms is None:
+            return f"Термин '{self.term}' не найден в тексте"
+    
         return " ".join([term[0] for term in relevant_terms])
 
     def calculate_tfidf(self):
